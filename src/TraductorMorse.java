@@ -30,6 +30,7 @@ public class TraductorMorse {
         diccionario.put("X","_.._");
         diccionario.put("Y","_.__");
         diccionario.put("Z","__..");
+        diccionario.put(" "," ");
         /*Zona de creación de lectura*/
         Scanner s=new Scanner(System.in);
         System.out.println("introduce la cadena a traducir");
