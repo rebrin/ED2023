@@ -4,9 +4,9 @@ import java.util.stream.Collectors;
 
 public class TestLambdas {
     public static void main(String[] args) {
-        Comanda c1=new Comanda(1,"tacos");
-        Comanda c2=new Comanda(2,"tortas");
-        Comanda c3=new Comanda(3,"tamales");
+        Comanda c1=new Comanda(2,"tacos");
+        Comanda c2=new Comanda(3,"tortas");
+        Comanda c3=new Comanda(1,"tamales");
         Comanda c4=new Comanda(4,"atole");
 
         ArrayList<Comanda>comandas=new ArrayList<>();
@@ -22,5 +22,7 @@ public class TestLambdas {
                 .collect(Collectors.toList());
         System.out.println(comandas.toString());
         System.out.println("filtrados:"+filtradas.toString());
+
+
     }
 }
