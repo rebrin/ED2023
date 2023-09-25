@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -19,7 +20,10 @@ public class TestFiles {
 
             System.out.println(listaAlumnos.toString());
 listaAlumnos.add(new Alumno("salvador",64,"46132"));
+listaAlumnos.add(new Alumno("juan",33,"46165"));
+listaAlumnos.add(new Alumno("Jesús",33,"46165"));
             System.out.println(listaAlumnos.toString());
+
 
 
 //        String cad="rebrin,40,5462132";
@@ -28,6 +32,14 @@ listaAlumnos.add(new Alumno("salvador",64,"46132"));
 //            System.out.println(res[0]);
 //            System.out.println(res[1]);
 //            System.out.println(res[2]);
+
+            /*guardar*/
+            Files.write(Paths.get("./src/alumnos.csv")
+                    ,listaAlumnos.stream()
+                            .map(alumno -> alumno.toString())
+                            .reduce("",
+                                    (a,b)->a.toString()+b.toString()+"\n")
+                            .getBytes(StandardCharsets.UTF_8));
         }catch (Exception e){
             System.err.println("error:"+e.getMessage());
             e.printStackTrace();

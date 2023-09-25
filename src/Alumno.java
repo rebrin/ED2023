@@ -11,6 +11,6 @@ public Alumno(String nombre,int edad,String matricula){
 
     @Override
     public String toString() {
-        return "{"+Matricula+","+Nombre+","+edad+"}";
+        return Nombre+","+edad+","+Matricula;
     }
 }
